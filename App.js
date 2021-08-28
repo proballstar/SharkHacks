@@ -1,13 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, SafeAreaView } from 'react-native';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { Provider } from 'react-redux';
+import HomeScreen from './screens/HomeScreen';
+import { store } from './store';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import MapScreen from './screens/MapScreen';
+import 'react-native-gesture-handler'
 
 export default function App() {
+
+  const Stack = createStackNavigator();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Provider store={store}>
+      <NavigationContainer>
+      <SafeAreaProvider>
+        <Stack.Navigator>
+          <Stack.Screen name="HomeScreen" component={HomeScreen} options={{
+            headerShown: false,
+
+          }}/>
+          <Stack.Screen name="MapScreen" component={MapScreen} />
+        </Stack.Navigator>
+      </SafeAreaProvider>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
