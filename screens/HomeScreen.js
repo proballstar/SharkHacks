@@ -6,7 +6,7 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import { GOOGLE_MAPS_APIKEY } from "@env"
 import { KeyboardAvoidingView} from 'react-native';
 import { useDispatch } from 'react-redux';
-import { setDestination, setOrigin } from '../slices/navSlice';
+import { setDestination, setOrigin, setTravelTimeInformation } from '../slices/navSlice';
 
 const HomeScreen = () => {
 
@@ -20,15 +20,16 @@ const HomeScreen = () => {
             <GooglePlacesAutocomplete  
                 enableHighAccuracyLocation
                 fetchDetails
-                keyboardShouldPersistTaps="always" onPress={(data, details = null) => {
+                onPress={(data, details = null) => {
+                    
+
                     dispath(setOrigin({
                         location: details.geometry.location,
                         description: data.description
                     }))
 
-                    dispath(setDestination(null))
+                    dispath((setDestination(null)))
 
-                    dispath(setDestination(null))
                 }} returnKeyType={"search"} minLength={2} enablePoweredByContainer={false} query={{ key: GOOGLE_MAPS_APIKEY, language: "en"}} styles={{ container: { flex: 0}, textInput: { fontSize: 18}}}nearbyPlacesAPI="GooglePlacesSearch" debounce={400} placeholder="Where From?">
                     
             </GooglePlacesAutocomplete>

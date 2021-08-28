@@ -13,16 +13,28 @@ const Map = () => {
         <View>
            <MapView   
         initialRegion={{
-            latitude: 60.002,
-            longitude: 98.005,
-            latitudeDelta: 0.005,
-            longitudeDelta: 0.005,
+            latitude: origin.location.lat,
+            longitude: origin.location.lng,
+            latitudeDelta: 0.300,
+            longitudeDelta: 0.300,
         }} 
         style={{ 
             height: Dimensions.get('window').height/2
         }}
         mapType="mutedStandard"
-      />   
+            >
+            {origin?.location && (
+                <Marker 
+                    coordinate={{
+                        latitude: origin.location.lat,
+                        longitude: origin.location.lng
+                    }}
+                    title="Origin"
+                    description={origin.description}
+                    identifier="origin"
+                />
+            )}
+            </MapView>   
              
        
         </View>
