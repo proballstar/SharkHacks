@@ -2,6 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react'
 import { StyleSheet, Text, SafeAreaView, View } from 'react-native'
 import tw from 'tailwind-react-native-classnames'
+import LastScreen from '../components/LastScreen';
 import Map from '../components/Map';
 import NavigateCard from '../components/NavigateCard'
 import RideOptionsCard from '../components/RideOptionsCard';
@@ -23,6 +24,10 @@ const MapScreen = () => {
                     <Stack.Screen name="RideOptionsCard" component={RideOptionsCard} options={{
                         headerShown: false
                     }}/>
+                    <Stack.Screen name="LastScreen" component={LastScreen} options={{
+                        headerShown: false
+                    }}/>
+
                 </Stack.Navigator>
             </View>
         </SafeAreaView>
