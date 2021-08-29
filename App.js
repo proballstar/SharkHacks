@@ -17,19 +17,17 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <KeyboardAvoidingView keyboardVerticalOffset={Platform.OS === "ios" ? -64 : 0} behavior={Platform.OS === "ios" ? "padding" : "height"} style={{ flex: 1 }}>
+      
       <NavigationContainer>
       <SafeAreaProvider>
         <Stack.Navigator>
           <Stack.Screen name="HomeScreen" component={HomeScreen} options={{
             headerShown: false,
-
           }}/>
           <Stack.Screen name="MapScreen" component={MapScreen} />
         </Stack.Navigator>
       </SafeAreaProvider>
       </NavigationContainer>
-      </KeyboardAvoidingView>
     </Provider>
   );
 }

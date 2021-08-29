@@ -4,11 +4,13 @@ import { Icon } from 'react-native-elements'
 import { useDispatch } from 'react-redux'
 import { setDestination } from '../slices/navSlice'
 import tw from 'tailwind-react-native-classnames'
+import { useNavigation } from '@react-navigation/core'
 
 
 const NavFavourites = () => {
 
     const dispatch = useDispatch()
+    const navigation = useNavigation()
 
     const data = [
         {
@@ -37,6 +39,7 @@ const NavFavourites = () => {
         <FlatList data={data} keyExtractor={(item) => item.id} renderItem={({item}) => (
             <TouchableOpacity style={tw`flex-row items-center p-5`} onPress={() => {
                 dispatch(setDestination({ location: item.location, description: item.destination}))
+                navigation.navigate('RideOptionsCard')
             }}>
                 <Icon  style={tw`mr-4 rounded-full bg-gray-300 p-3`} name={item.icon} type="ionicon" color="white" size={20}/>
                 <View>
