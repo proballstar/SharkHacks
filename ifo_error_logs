@@ -1,0 +1,99 @@
+// errors on Ifo computer
+
+ERROR
+21:15
+TypeError: null is not an object (evaluating 'origin.location')
+
+This error is located at:
+    in Map (at MapScreen.js:10)
+    in RCTView (at View.js:34)
+    in View (at MapScreen.js:9)
+    in RCTView (at View.js:34)
+    in View (at SafeAreaView.js:41)
+    in ForwardRef(SafeAreaView) (at MapScreen.js:8)
+    in MapScreen (at SceneView.tsx:126)
+    in StaticContainer
+    in StaticContainer (at SceneView.tsx:119)
+    in EnsureSingleNavigator (at SceneView.tsx:118)
+    in SceneView (at useDescriptors.tsx:209)
+    in RCTView (at View.js:34)
+    in View (at CardContainer.tsx:280)
+    in RCTView (at View.js:34)
+    in View (at CardContainer.tsx:278)
+    in RCTView (at View.js:34)
+    in View (at CardSheet.tsx:33)
+    in ForwardRef(CardSheet) (at Card.tsx:556)
+    in RCTView (at View.js:34)
+    in View (at createAnimatedComponent.js:165)
+    in AnimatedComponent (at createAnimatedComponent.js:215)
+    in ForwardRef(AnimatedComponentWrapper) (at Card.tsx:535)
+    in PanGestureHandler (at GestureHandlerNative.tsx:14)
+    in PanGestureHandler (at Card.tsx:529)
+    in RCTView (at View.js:34)
+    in View (at createAnimatedComponent.js:165)
+    in AnimatedComponent (at createAnimatedComponent.js:215)
+    in ForwardRef(AnimatedComponentWrapper) (at Card.tsx:525)
+    in RCTView (at View.js:34)
+    in View (at Card.tsx:519)
+    in Card (at CardContainer.tsx:218)
+    in CardContainer (at CardStack.tsx:649)
+    in RNSScreen (at createAnimatedComponent.js:165)
+    in AnimatedComponent (at createAnimatedComponent.js:215)
+    in ForwardRef(AnimatedComponentWrapper) (at src/index.native.tsx:147)
+    in Screen (at Screens.tsx:37)
+    in MaybeScreen (at CardStack.tsx:642)
+    in RNSScreenContainer (at src/index.native.tsx:186)
+    in ScreenContainer (at Screens.tsx:20)
+    in MaybeScreenContainer (at CardStack.tsx:561)
+    in RCTView (at View.js:34)
+    in View (at Background.tsx:13)
+    in Background (at CardStack.tsx:559)
+    in CardStack (at StackView.tsx:437)
+    in RCTView (at View.js:34)
+    in View (at SafeAreaProviderCompat.tsx:42)
+    in SafeAreaProviderCompat (at StackView.tsx:430)
+    in GestureHandlerRootView (at GestureHandlerRootView.android.tsx:26)
+    in GestureHandlerRootView (at StackView.tsx:429)
+    in StackView (at createStackNavigator.tsx:118)
+    in Unknown (at createStackNavigator.tsx:117)
+    in StackNavigator (at App.js:21)
+    in RNCSafeAreaProvider (at SafeAreaContext.tsx:76)
+    in SafeAreaProvider (at App.js:20)
+    in EnsureSingleNavigator (at BaseNavigationContainer.tsx:429)
+    in ForwardRef(BaseNavigationContainer) (at NavigationContainer.tsx:132)
+    in ThemeProvider (at NavigationContainer.tsx:131)
+    in ForwardRef(NavigationContainerInner) (at App.js:19)
+    in Provider (at App.js:18)
+    in App (created by ExpoRoot)
+    in ExpoRoot (at renderApplication.js:45)
+    in RCTView (at View.js:34)
+    in View (at AppContainer.js:106)
+    in RCTView (at View.js:34)
+    in View (at AppContainer.js:132)
+    in AppContainer (at renderApplication.js:39)
+
+Stack trace:
+  node_modules\react-native\Libraries\LogBox\LogBox.js:148:8 in registerError
+  node_modules\react-native\Libraries\LogBox\LogBox.js:59:8 in errorImpl
+  node_modules\react-native\Libraries\LogBox\LogBox.js:33:4 in console.error
+  node_modules\expo\build\environment\react-native-logs.fx.js:27:4 in error
+  node_modules\react-native\Libraries\Core\ExceptionsManager.js:104:6 in reportException
+  node_modules\react-native\Libraries\Core\ExceptionsManager.js:171:19 in handleException
+  node_modules\react-native\Libraries\Core\setUpErrorHandling.js:24:6 in handleError
+  node_modules\expo-error-recovery\build\ErrorRecovery.fx.js:12:21 in ErrorUtils.setGlobalHandler$argument_0
+  node_modules\regenerator-runtime\runtime.js:63:36 in tryCatch
+  node_modules\regenerator-runtime\runtime.js:294:29 in invoke
+  node_modules\regenerator-runtime\runtime.js:63:36 in tryCatch
+  node_modules\regenerator-runtime\runtime.js:155:27 in invoke
+  node_modules\regenerator-runtime\runtime.js:165:18 in PromiseImpl.resolve.then$argument_0
+  node_modules\react-native\node_modules\promise\setimmediate\core.js:37:13 in tryCallOne
+  node_modules\react-native\node_modules\promise\setimmediate\core.js:123:24 in setImmediate$argument_0
+  node_modules\react-native\Libraries\Core\Timers\JSTimers.js:130:14 in _callTimer
+  node_modules\react-native\Libraries\Core\Timers\JSTimers.js:181:14 in _callImmediatesPass
+  node_modules\react-native\Libraries\Core\Timers\JSTimers.js:441:30 in callImmediates
+  node_modules\react-native\Libraries\BatchedBridge\MessageQueue.js:387:6 in __callImmediates
+  node_modules\react-native\Libraries\BatchedBridge\MessageQueue.js:135:6 in __guard$argument_0
+  node_modules\react-native\Libraries\BatchedBridge\MessageQueue.js:364:10 in __guard
+  node_modules\react-native\Libraries\BatchedBridge\MessageQueue.js:134:4 in flushedQueue
+  [native code]:null in flushedQueue
+  [native code]:null in invokeCallbackAndReturnFlushedQueue
