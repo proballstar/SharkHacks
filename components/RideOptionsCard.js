@@ -56,10 +56,10 @@ const RideOptionsCard = () => {
                 data={data}
                 keyExtractor={(item) => item.id}
                 renderItem={({item}) => (
-                    <TouchableOpacity style={tw`flex-row justify-between items-center px-10 flex-1 ml-5 mt-3 
+                    <TouchableOpacity style={tw`flex-row justify-between items-center px-10 flex-1 ml-5 mt-5 
                     
                     ${item.id === selected?.id  && "bg-gray-200"}`}
-                    onPress={() => setSelected(item)}
+                    onPress={() => navigation.navigate('LastScreen')}
                     >
                         <View>
                             <Image 
@@ -83,12 +83,6 @@ const RideOptionsCard = () => {
                     </TouchableOpacity>
                 )}
             />
-            <View style={tw`mt-auto border-t mb-9 h-8`}>
-                <TouchableOpacity style={tw`bg-black py-3 m-3 ${!selected && "bg-gray-500"}`} disabled={!selected} onPress={() => navigation.navigate('LastScreen')}>
-                    <Text style={tw`text-center text-white text-xl`}>Choose {selected?.title} </Text>
-                </TouchableOpacity>
-                <View style={{ padding: 200}}></View>
-            </View>
         </SafeAreaView>
     )
 }
