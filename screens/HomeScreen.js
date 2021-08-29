@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { StyleSheet, Text, SafeAreaView, View, Image } from 'react-native'
 import tw from 'tailwind-react-native-classnames'
 import NavOptions from '../components/NavOptions'
@@ -7,10 +7,15 @@ import { GOOGLE_MAPS_APIKEY } from "@env"
 import { KeyboardAvoidingView} from 'react-native';
 import { useDispatch } from 'react-redux';
 import { setDestination, setOrigin, setTravelTimeInformation } from '../slices/navSlice';
+import { installWebGeolocationPolyfill } from 'expo-location';
+import NavFav from '../components/NavFavourites';
 
 const HomeScreen = () => {
 
     const dispath = useDispatch()
+
+
+    installWebGeolocationPolyfill()
 
     return (
         <SafeAreaView style={tw`bg-white h-full`}>
@@ -20,6 +25,10 @@ const HomeScreen = () => {
             <GooglePlacesAutocomplete  
                 enableHighAccuracyLocation
                 fetchDetails
+                currentLocation
+                GooglePlacesSearchQuery={{
+                    rankby: 'distance'
+                }}
                 onPress={(data, details = null) => {
                     
 
@@ -35,6 +44,7 @@ const HomeScreen = () => {
             </GooglePlacesAutocomplete>
             <View style={tw`p-20`}/>
             <NavOptions />
+            <NavFav />
            </View>
         </SafeAreaView>
     )
